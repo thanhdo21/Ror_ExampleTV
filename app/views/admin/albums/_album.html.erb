@@ -1,0 +1,8 @@
+ <tr>
+        <td class="border border-slate-300 p-2"><%= album.Title %></td>
+        <td class="border border-slate-300 p-2"><%= album.artist.Name %></td>
+        <td class="border border-slate-300">
+        <%= link_to "Edit", edit_admin_album_path(album),class: " font-bold py-2 px-4 rounded-full" %>
+        <%= link_to "Destroy",admin_album_path(album),class: " font-bold py-2 px-4 rounded-full",  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </td>
+      </tr>

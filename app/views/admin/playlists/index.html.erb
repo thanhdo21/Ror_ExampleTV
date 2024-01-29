@@ -1,0 +1,25 @@
+<% content_for :page_title, "Albums" %>
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <%= link_to "New playlist", new_admin_playlist_path, class: "rounded-lg py-3 px-5 bg-blue-600 block font-medium" %>
+  </div>
+
+  <div id="playlists" class="min-w-full">
+
+      <table class="table-auto">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @playlists %>
+  </tbody>
+</table>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<%= form_with model: @admin_media_type,url: (admin_media_type.MediaTypeId==nil ? admin_media_types_path : admin_media_type_path) , class: "contents" do |form| %>
+  <% if admin_media_type.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(admin_media_type.errors.count, "error") %> prohibited this admin_media_type from being saved:</h2>
+
+      <ul>
+        <% admin_media_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="sm:col-span-3">
+          <%= form.label :Name, "Name:" %>
+          <div class="mt-2">
+            <%= form.text_field :Name , class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+          </div>
+        </div>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

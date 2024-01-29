@@ -1,0 +1,8 @@
+<tr>
+    <td><%= playlist.Name %></td>
+  <% if action_name != "show" %>
+    <td><%= link_to "Show", admin_playlist_path(playlist), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit", edit_admin_playlist_path(playlist), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    </td>
+  <% end %>
+</tr>
